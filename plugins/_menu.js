@@ -93,33 +93,33 @@ bot.addCommand(
       }
     })
     const [date, time] = getDate()
-    let msg = `\`\`\`╭═══ LEVANTER ═══⊷
-┃❃╭──────────────
-┃❃│ Prefix : ${PREFIX}
-┃❃│ User : ${message.pushName}
-┃❃│ Time : ${time}
-┃❃│ Day : ${date.toLocaleString('en', { weekday: 'long' })}
-┃❃│ Date : ${date.toLocaleDateString('hi')}
-┃❃│ Version : ${VERSION}
-┃❃│ Plugins : ${PLUGINS.count}
-┃❃│ Ram : ${getRam()}
-┃❃│ Uptime : ${getUptime('t')}
-┃❃│ Platform : ${getPlatform()}
-┃❃╰───────────────
-╰═════════════════⊷\`\`\`\n`
+    let msg = `*╭═══ XOULXY ═══⊷*
+*┃☆╭──────────────*
+*┃☆│ ᴩʀᴇꜰɪx : ${PREFIX}*
+*┃☆│ Uꜱᴇʀ : ${message.pushName}*
+*┃☆│ Tɪᴍᴇ : ${time}*
+*┃☆│ Dᴀʏ : ${date.toLocaleString('en', { weekday: 'long' })}*
+*┃☆│ Dᴀᴛᴇ : ${date.toLocaleDateString('hi')}*
+*┃☆│ Vᴠᴇʀꜱɪᴏɴ : ${VERSION}*
+*┃☆│ Pᴩʟᴜɢɪɴꜱ : ${PLUGINS.count}*
+*┃☆│ Rᴀᴍ : ${getRam()}*
+*┃☆│ Uᴩᴛɪᴍᴇ : ${getUptime('t')}*
+*┃☆│ Pʟᴀᴛꜰᴏʀᴍ : ${getPlatform()}*
+*┃☆╰───────────────*
+*╰═════════════════⊷*`
 
     if (match && commands[match]) {
-      msg += ` ╭─❏ ${textToStylist(match.toLowerCase(), 'smallcaps')} ❏\n`
+      msg += ` ╭─❏ ${textToStylist(match.toLowerCase(), 'mono')} ❏\n`
       for (const plugin of commands[match])
-        msg += ` │ ${textToStylist(plugin.toUpperCase(), 'mono')}\n`
+        msg += ` │ ${textToStylist(plugin.toUpperCase(), 'smallcaps')}\n`
       msg += ` ╰─────────────────`
 
       return await message.send(msg)
     }
     for (const command in commands) {
-      msg += ` ╭─❏ ${textToStylist(command.toLowerCase(), 'smallcaps')} ❏\n`
+      msg += ` ╭─❏ ${textToStylist(command.toLowerCase(), 'mono')} ❏\n`
       for (const plugin of commands[command])
-        msg += ` │ ${textToStylist(plugin.toUpperCase(), 'mono')}\n`
+        msg += ` │ ${textToStylist(plugin.toUpperCase(), 'smallcaps')}\n`
       msg += ` ╰─────────────────\n`
     }
     await message.send(msg.trim())
